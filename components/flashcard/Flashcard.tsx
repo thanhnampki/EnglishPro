@@ -3,7 +3,6 @@
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent } from '@/components/ui/Card';
-import { RotateCw } from 'lucide-react';
 import type { Flashcard } from '@/lib/types';
 
 interface FlashcardProps {

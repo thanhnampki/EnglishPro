@@ -6,7 +6,6 @@ import { PageContainer } from '@/components/layout/PageContainer';
 import { LessonHeader } from '@/components/lesson/LessonHeader';
 import { LessonMediaPlayer } from '@/components/lesson/LessonMediaPlayer';
 import { TranscriptList } from '@/components/lesson/TranscriptList';
-import { VocabularyCard } from '@/components/vocabulary/VocabularyCard';
 import { Button } from '@/components/ui/Button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
 import { LESSONS, VOCABULARY } from '@/data/lessons';

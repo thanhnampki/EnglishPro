@@ -12,8 +12,6 @@ interface LessonMediaPlayerProps {
 }
 
 export function LessonMediaPlayer({
-  mediaUrl,
-  mediaType,
   title,
 }: LessonMediaPlayerProps) {
   const [isPlaying, setIsPlaying] = useState(false);

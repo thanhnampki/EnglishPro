@@ -7,7 +7,6 @@ import { VocabularyCard } from '@/components/vocabulary/VocabularyCard';
 import { VOCABULARY } from '@/data/lessons';
 import { useState } from 'react';
 import { Button } from '@/components/ui/Button';
-import { Badge } from '@/components/ui/Badge';
 
 export default function VocabularyPage() {
   const [selectedLevel, setSelectedLevel] = useState<string | null>(null);

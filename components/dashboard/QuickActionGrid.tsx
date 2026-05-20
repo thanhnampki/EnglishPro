@@ -1,8 +1,7 @@
 'use client';
 
 import Link from 'next/link';
-import { Button } from '@/components/ui/Button';
-import { BookMarked, Mic, Zap, Grid, BarChart3, Play } from 'lucide-react';
+import { BookMarked, Mic, Zap, Grid, BarChart3 } from 'lucide-react';
 
 const actions = [
   {
