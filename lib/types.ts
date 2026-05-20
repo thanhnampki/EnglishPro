@@ -71,3 +71,50 @@ export interface DeckProgress {
   knownCards: number;
   reviewCards: number;
 }
+
+// Shadowing Feature - Live Data Integration Types
+export interface ShadowingLesson {
+  id: string;
+  metadata: LessonMetadata;
+  audio: AudioResource;
+  script: ShadowingScript[];
+  vocabulary?: VocabularyItem[];
+  caching?: CacheMetadata;
+}
+
+export interface LessonMetadata {
+  title: string;
+  topic: string;
+  difficulty: 'beginner' | 'intermediate' | 'advanced';
+  durationSeconds: number;
+  source: 'ted-talks' | 'youtube' | 'supabase' | 'custom';
+  language: string;
+  speaker?: string;
+  publishedAt: string;
+}
+
+export interface AudioResource {
+  url: string;
+  mimeType: 'audio/mpeg' | 'audio/wav' | 'audio/webm';
+  bitrate?: number;
+  checksumSha256?: string;
+}
+
+export interface ShadowingScript {
+  id: string;
+  order: number;
+  text: string;
+  translation: string;
+  startTime: number;
+  endTime: number;
+  phonetics?: string;
+  vocabularyIds?: string[];
+  difficulty?: number;
+  notes?: string;
+}
+
+export interface CacheMetadata {
+  eTag: string;
+  cacheControl: string;
+  lastModified: string;
+}

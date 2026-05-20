@@ -7,6 +7,7 @@ import { PageContainer } from '@/components/layout/PageContainer';
 import { ShadowingPanel } from '@/components/shadowing/ShadowingPanel';
 import { SpeedControl } from '@/components/shadowing/SpeedControl';
 import { TranscriptList } from '@/components/lesson/TranscriptList';
+import { AudioPlayer } from '@/components/shadowing/AudioPlayer';
 import { LESSONS } from '@/data/lessons';
 import { CONSTANTS } from '@/lib/constants';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/Card';
@@ -22,6 +23,12 @@ export default function ShadowingPage() {
   >({});
 
   const currentLine = lesson.transcriptLines[currentIndex];
+  const audioPlayer = AudioPlayer({
+    audioUrl: lesson.mediaUrl,
+    playbackSpeed,
+    startTime: currentLine.startTime,
+    endTime: currentLine.endTime,
+  });
 
   const handlePrevious = () => {
     if (currentIndex > 0) setCurrentIndex(currentIndex - 1);
@@ -34,8 +41,7 @@ export default function ShadowingPage() {
   };
 
   const handlePlayAudio = () => {
-    // Audio playback would be implemented here
-    console.log(`Playing: ${currentLine.text} at ${playbackSpeed}x speed`);
+    audioPlayer.play();
   };
 
   const handleMarkPracticed = () => {
@@ -67,6 +73,9 @@ export default function ShadowingPage() {
       <AppHeader />
       <PageContainer>
         <div className="space-y-8">
+          {/* Audio Element */}
+          {audioPlayer.audioElement}
+
           {/* Header */}
           <div>
             <h1 className="mb-2 text-3xl font-bold text-slate-900">
